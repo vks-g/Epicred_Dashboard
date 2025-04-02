@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
+import { Link } from "react-router-dom";
 
 export const HeaderSection = (): JSX.Element => {
   return (
@@ -67,7 +68,7 @@ export const HeaderSection = (): JSX.Element => {
           </div>
 
           <div className="flex items-center gap-4 z-50">
-            
+            <Link to={"/login"}>
             <Button
               variant="ghost"
               className="font-button-normal text-brandsprimary"
@@ -75,10 +76,13 @@ export const HeaderSection = (): JSX.Element => {
             >
               Login
             </Button>
+            </Link>
             <Separator orientation="vertical" className="h-12" />
+            <Link to={"/signin"}>
             <Button className="bg-brandsprimary font-button-normal text-neutrals-0">
               Sign Up
             </Button>
+            </Link>
           </div>
         </div>
 
