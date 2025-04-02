@@ -127,7 +127,7 @@ export const MainContentSection = (): JSX.Element => {
           {firstRowJobs.map((job) => (
             <Card
               key={job.id}
-              className="flex flex-col border border-solid border-[#d6ddeb] bg-white"
+              className="flex flex-col border border-solid border-[#d6ddeb] transition-transform duration-300 hover:translate-x-2 hover:-translate-y-2 bg-white"
             >
               <CardContent className="flex flex-col gap-4 p-6">
                 <div className="flex items-start justify-between w-full">
@@ -197,7 +197,7 @@ export const MainContentSection = (): JSX.Element => {
           {secondRowJobs.map((job) => (
             <Card
               key={job.id}
-              className="flex flex-col border border-solid border-[#d6ddeb] bg-white"
+              className="flex flex-col border border-solid border-[#d6ddeb] transition-transform duration-300 hover:translate-x-2 hover:-translate-y-2 bg-white"
             >
               <CardContent className="flex flex-col gap-4 p-6">
                 <div className="flex items-start justify-between w-full">

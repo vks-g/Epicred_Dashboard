@@ -28,11 +28,11 @@ export const HeroSection = (): JSX.Element => {
           <span className="text-[#26a3ff]">category</span>
         </h2>
 
-        <div className="flex items-center gap-4">
-          <button className="font-body-normal-semibold text-[length:var(--body-normal-semibold-font-size)] tracking-[var(--body-normal-semibold-letter-spacing)] leading-[var(--body-normal-semibold-line-height)] [font-style:var(--body-normal-semibold-font-style)] font-[number:var(--body-normal-semibold-font-weight)] text-brandsprimary">
+        <div className="group flex items-center gap-4 ">
+          <button className=" font-body-normal-semibold text-[length:var(--body-normal-semibold-font-size)] tracking-[var(--body-normal-semibold-letter-spacing)] leading-[var(--body-normal-semibold-line-height)] [font-style:var(--body-normal-semibold-font-style)] font-[number:var(--body-normal-semibold-font-weight)] text-brandsprimary transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-z-3">
             Show all jobs
           </button>
-          <ArrowRightIcon className="w-6 h-6" />
+          <ArrowRightIcon className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-z-3" />
         </div>
       </header>
 
@@ -41,48 +41,35 @@ export const HeroSection = (): JSX.Element => {
         <div className="flex gap-8">
           {categoryData.slice(0, 4).map((category, index) => (
             <Card
-              key={index}
-              className={`border border-solid border-[#d6ddeb] p-0 ${
-                category.highlighted ? "bg-brandsprimary" : "bg-neutrals-0"
-              }`}
-            >
-              <CardContent className="flex flex-col items-start gap-8 p-8">
-                <img
-                  className="w-12 h-12"
-                  alt={`${category.title} icon`}
-                  src={category.icon}
-                />
-
-                <div className="flex flex-col items-start justify-center gap-3">
-                  <h3
-                    className={`w-[210px] font-title-large-semibold text-[length:var(--title-large-semibold-font-size)] tracking-[var(--title-large-semibold-letter-spacing)] leading-[var(--title-large-semibold-line-height)] [font-style:var(--title-large-semibold-font-style)] font-[number:var(--title-large-semibold-font-weight)] ${
-                      category.highlighted
-                        ? "text-neutrals-0"
-                        : "text-neutrals-100"
+            key={index}
+            className={`group border border-solid border-[#d6ddeb] p-0 hover:bg-blue-800 transition duration-300 ${
+              category.highlighted ? "bg-brandsprimary" : "bg-neutrals-0"
+            }`}
+          >
+            <CardContent className="flex flex-col items-start gap-8 p-8">
+              <img className="w-12 h-12" alt={`${category.title} icon`} src={category.icon} />
+          
+              <div className="flex flex-col items-start justify-center gap-3">
+                <h3
+                  className={`w-[210px] font-title-large-semibold text-[length:var(--title-large-semibold-font-size)] tracking-[var(--title-large-semibold-letter-spacing)] leading-[var(--title-large-semibold-line-height)] [font-style:var(--title-large-semibold-font-style)] font-[number:var(--title-large-semibold-font-weight)] ${
+                    category.highlighted ? "text-neutrals-0" : "text-neutrals-100"
+                  } group-hover:text-white transition duration-300`}
+                >
+                  {category.title}
+                </h3>
+                <div className="flex items-center gap-4">
+                  <span
+                    className={`font-body-large-regular text-[length:var(--body-large-regular-font-size)] tracking-[var(--body-large-regular-letter-spacing)] leading-[var(--body-large-regular-line-height)] [font-style:var(--body-large-regular-font-style)] font-[number:var(--body-large-regular-font-weight)] group-hover:text-white transition duration-300 ${
+                      category.highlighted ? "text-neutrals-0" : "text-neutrals-60"
                     }`}
                   >
-                    {category.title}
-                  </h3>
-
-                  <div className="flex items-center gap-4">
-                    <span
-                      className={`font-body-large-regular text-[length:var(--body-large-regular-font-size)] tracking-[var(--body-large-regular-letter-spacing)] leading-[var(--body-large-regular-line-height)] [font-style:var(--body-large-regular-font-style)] font-[number:var(--body-large-regular-font-weight)] ${
-                        category.highlighted
-                          ? "text-neutrals-0"
-                          : "text-neutrals-60"
-                      }`}
-                    >
-                      {category.jobs} jobs available
-                    </span>
-                    <img
-                      className="w-6 h-6"
-                      alt="Arrow icon"
-                      src="/icon-1.svg"
-                    />
-                  </div>
+                    {category.jobs} jobs available
+                  </span>
+                  <img className="w-6 h-6" alt="Arrow icon" src="/icon-1.svg" />
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </CardContent>
+          </Card>          
           ))}
         </div>
 
@@ -91,7 +78,7 @@ export const HeroSection = (): JSX.Element => {
           {categoryData.slice(4, 8).map((category, index) => (
             <Card
               key={index}
-              className="border border-solid border-[#d6ddeb] p-0 bg-neutrals-0"
+              className="group border border-solid border-[#d6ddeb] p-0 bg-neutrals-0 hover:bg-blue-800 transition duration-300"
             >
               <CardContent className="flex flex-col items-start gap-8 p-8">
                 <img
@@ -101,12 +88,12 @@ export const HeroSection = (): JSX.Element => {
                 />
 
                 <div className="flex flex-col items-start justify-center gap-3">
-                  <h3 className="w-[210px] font-title-large-semibold text-[length:var(--title-large-semibold-font-size)] tracking-[var(--title-large-semibold-letter-spacing)] leading-[var(--title-large-semibold-line-height)] [font-style:var(--title-large-semibold-font-style)] font-[number:var(--title-large-semibold-font-weight)] text-neutrals-100">
+                  <h3 className="w-[210px] font-title-large-semibold text-[length:var(--title-large-semibold-font-size)] tracking-[var(--title-large-semibold-letter-spacing)] leading-[var(--title-large-semibold-line-height)] [font-style:var(--title-large-semibold-font-style)] font-[number:var(--title-large-semibold-font-weight)] text-neutrals-100 group-hover:text-white transition duration-300">
                     {category.title}
                   </h3>
 
                   <div className="flex items-center gap-4">
-                    <span className="font-body-large-regular text-[length:var(--body-large-regular-font-size)] tracking-[var(--body-large-regular-letter-spacing)] leading-[var(--body-large-regular-line-height)] [font-style:var(--body-large-regular-font-style)] font-[number:var(--body-large-regular-font-weight)] text-neutrals-60">
+                    <span className="font-body-large-regular text-[length:var(--body-large-regular-font-size)] tracking-[var(--body-large-regular-letter-spacing)] leading-[var(--body-large-regular-line-height)] [font-style:var(--body-large-regular-font-style)] font-[number:var(--body-large-regular-font-weight)] text-neutrals-60 group-hover:text-white transition duration-300">
                       {category.jobs} jobs available
                     </span>
                     <img

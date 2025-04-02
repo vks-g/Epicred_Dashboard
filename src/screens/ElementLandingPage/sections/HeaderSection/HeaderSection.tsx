@@ -103,17 +103,18 @@ export const HeaderSection = (): JSX.Element => {
           </div>
 
           {/* SearchIcon Card */}
-          <Card className="w-[852px] shadow-shadow bg-white">
+          <Card className="w-[720px] shadow-shadow bg-white z-50 pr-5">
             <CardContent className="p-0">
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 {/* Job Title Input */}
                 <div className="flex items-center gap-4 px-4 py-4 flex-1">
                   <SearchIcon className="w-6 h-6" />
                   <div className="flex flex-col w-full">
-                    <div className="opacity-50 font-body-normal-regular text-neutrals-60">
+                    {/* <div className="opacity-50 font-body-normal-regular text-neutrals-60">
                       Job title or keyword
-                    </div>
-                    <Separator className="mt-5 bg-neutrals-20" />
+                    </div> */}
+                    <input type='text' placeholder="Job title or keyword" className="opacity-50 font-body-normal-regular text-neutrals-60 h-12"></input>
+                    <Separator className="mt-0 bg-neutrals-20" />
                   </div>
                 </div>
 
@@ -122,18 +123,19 @@ export const HeaderSection = (): JSX.Element => {
                   <MapPinIcon className="w-6 h-6" />
                   <div className="flex flex-col w-full">
                     <div className="flex items-center justify-between w-full">
-                      <div className="opacity-90 font-body-normal-regular text-neutrals-100">
+                      {/* <div className="opacity-90 font-body-normal-regular text-neutrals-100">
                         Florence, Italy
-                      </div>
+                      </div> */}
+                      <input type='text' placeholder="Location" className="opacity-50 font-body-normal-regular text-neutrals-60 w-100 h-12"></input>
                       <ChevronDownIcon className="w-4 h-4" />
                     </div>
-                    <Separator className="mt-5 bg-neutrals-20" />
+                    <Separator className="mt-0 bg-neutrals-20" />
                   </div>
                 </div>
 
                 {/* SearchIcon Button */}
                 <Button className="w-[209px] h-full py-3.5 px-[27px] bg-brandsprimary rounded-none font-button-large text-neutrals-0">
-                  SearchIcon my job
+                  Search my job
                 </Button>
               </div>
             </CardContent>

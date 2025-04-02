@@ -108,11 +108,14 @@ export const FeaturedJobsSection = (): JSX.Element => {
 
           {/* <div className="grid grid-cols-1 gap-8 md:grid-cols-2 z-50"> */}
           {/* <div className="grid grid-cols-1 gap-8 md:grid-cols-2 z-50"> */}
+          {/* <div className="container relative mx-auto flex flex-col items-center"> */}
           <div className="container relative mx-auto flex flex-col items-center">
             {/* Left Column */}
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4"> */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-50 mx-auto">
+
               {leftColumnJobs.map((job) => (
-                <Card key={job.id} className="w-full bg-neutrals-0">
+                <Card key={job.id} className="w-full bg-neutrals-0 transition-transform duration-300 hover:translate-x-2 hover:-translate-y-2">
                   <CardContent className="flex items-start gap-6 p-10">
                     <img
                       className="h-16 w-16"
@@ -166,9 +169,11 @@ export const FeaturedJobsSection = (): JSX.Element => {
             </div>
 
             {/* Right Column */}
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4"> */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-50 mx-auto mt-8">
+
               {rightColumnJobs.map((job) => (
-                <Card key={job.id} className="w-full bg-neutrals-0">
+                <Card key={job.id} className="w-full bg-neutrals-0 transition-transform duration-300 hover:translate-x-2 hover:-translate-y-2">
                   <CardContent className="flex items-start gap-6 p-10">
                     {job.isImage ? (
                       <div className="h-16 w-16 bg-[url(/mask-group.png)] bg-[100%_100%]" />
