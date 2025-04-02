@@ -81,7 +81,7 @@ export const FeaturedJobsSection = (): JSX.Element => {
 
   return (
     <section className="w-full bg-[url(/bg.svg)] bg-[100%_100%] py-16">
-      <div className="container relative mx-auto">
+      <div className="relative mx-auto">
         <img
           className="absolute right-0 top-0 h-full "
           alt="Pattern"
@@ -109,14 +109,13 @@ export const FeaturedJobsSection = (): JSX.Element => {
           {/* <div className="grid grid-cols-1 gap-8 md:grid-cols-2 z-50"> */}
           {/* <div className="grid grid-cols-1 gap-8 md:grid-cols-2 z-50"> */}
           {/* <div className="container relative mx-auto flex flex-col items-center"> */}
-          <div className="container relative mx-auto flex flex-col items-center">
+          <div className="relative mx-auto flex flex-col items-center">
             {/* Left Column */}
             {/* <div className="flex flex-col gap-4"> */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-50 mx-auto">
-
               {leftColumnJobs.map((job) => (
                 <Card key={job.id} className="w-full bg-neutrals-0 transition-transform duration-300 hover:translate-x-2 hover:-translate-y-2">
-                  <CardContent className="flex items-start gap-6 p-10">
+                  <CardContent className="flex items-start gap-6 p-5 md:p-10">
                     <img
                       className="h-16 w-16"
                       alt={`${job.company} logo`}
@@ -168,22 +167,15 @@ export const FeaturedJobsSection = (): JSX.Element => {
               ))}
             </div>
 
-            {/* Right Column */}
-            {/* <div className="flex flex-col gap-4"> */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-50 mx-auto mt-8">
-
               {rightColumnJobs.map((job) => (
                 <Card key={job.id} className="w-full bg-neutrals-0 transition-transform duration-300 hover:translate-x-2 hover:-translate-y-2">
-                  <CardContent className="flex items-start gap-6 p-10">
-                    {job.isImage ? (
-                      <div className="h-16 w-16 bg-[url(/mask-group.png)] bg-[100%_100%]" />
-                    ) : (
-                      <img
-                        className="h-16 w-16"
-                        alt={`${job.company} logo`}
-                        src={job.logo}
-                      />
-                    )}
+                  <CardContent className="flex items-start gap-6 p-5 md:p-10">
+                    <img
+                      className="h-16 w-16"
+                      alt={`${job.company} logo`}
+                      src={job.logo}
+                    />
                     <div className="flex flex-col items-start gap-2">
                       <h3 className="mt-[-1.00px] font-display-2 font-[number:var(--display-2-font-weight)] text-neutrals-100 text-[length:var(--display-2-font-size)] tracking-[var(--display-2-letter-spacing)] leading-[var(--display-2-line-height)] whitespace-nowrap [font-style:var(--display-2-font-style)]">
                         {job.title}

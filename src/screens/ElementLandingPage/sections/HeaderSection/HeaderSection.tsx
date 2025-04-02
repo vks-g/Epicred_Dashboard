@@ -1,16 +1,18 @@
 import { ChevronDownIcon, MapPinIcon, SearchIcon } from "lucide-react";
-import React from "react";
+import { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
 import { Link } from "react-router-dom";
 
 export const HeaderSection = (): JSX.Element => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
   return (
     <section className="relative w-full bg-lightsgray overflow-hidden">
       <div className="relative">
         <img
-          className="absolute  h-[794px] top-0 right-0"
+          className="absolute  h-[794px] top-0 right-0 -z-50"
           alt="Pattern"
           src="/pattern.svg"
         />
@@ -18,7 +20,7 @@ export const HeaderSection = (): JSX.Element => {
         <div className="absolute right-0 top-[87px]">
           <div className="relative">
             <img
-              className="w-[501px] h-[707px] object-cover hidden md:block"
+              className="w-[501px] h-[707px] object-cover  md:block z-[-99999] max-sm:hidden"
               alt="Design"
               src="/design-b3dcb2a2-23f6-41f0-b740-595184e6d3e9-1.png"
             />
@@ -32,8 +34,9 @@ export const HeaderSection = (): JSX.Element => {
         </div>
 
         {/* Navigation Bar */}
-        <div className="flex items-center justify-between px-12 md:px-[124px] py-6">
+        <div className="flex items-center justify-between px-12 md:px-[124px] py-6 max-sm:items-start">
           <div className="flex items-center gap-12">
+            {/* Logo */}
             <div className="relative w-40 h-9">
               <div className="absolute w-8 h-8 top-0.5 left-0 bg-brandsprimary rounded-2xl overflow-hidden">
                 <div className="relative w-5 h-[23px] top-1 left-[7px]">
@@ -52,41 +55,86 @@ export const HeaderSection = (): JSX.Element => {
               </div>
             </div>
 
-            <div className="flex items-end gap-4">
+            <div className="flex items-end gap-4 max-sm:hidden">
               <div className="py-6">
-                <Button  variant='ghost' className="block font-body-normal-medium text-neutrals-80">
+                <Button
+                  variant="ghost"
+                  className="block font-body-normal-medium text-neutrals-80"
+                >
                   Find Jobs
                 </Button>
               </div>
               <div className="py-6">
-                <Button variant="ghost" className="block font-body-normal-medium text-neutrals-80">
+                <Button
+                  variant="ghost"
+                  className="block font-body-normal-medium text-neutrals-80"
+                >
                   Browse Companies
                 </Button>
-                
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 z-50">
+          <div className="flex items-center  gap-4 z-50 max-sm:hidden">
             <Link to={"/login"}>
-            <Button
-              variant="ghost"
-              className="font-button-normal text-brandsprimary"
-              onClick={()=>{console.log('hi')}}
-            >
-              Login
-            </Button>
+              <Button
+                variant="ghost"
+                className="font-button-normal text-brandsprimary"
+              >
+                Login
+              </Button>
             </Link>
             <Separator orientation="vertical" className="h-12" />
             <Link to={"/signin"}>
-            <Button className="bg-brandsprimary font-button-normal text-neutrals-0">
-              Sign Up
-            </Button>
+              <Button className="bg-brandsprimary font-button-normal text-neutrals-0">
+                Sign Up
+              </Button>
             </Link>
           </div>
-          <button className="flex md:hidden p-3 bg-white border border-gray-300 rounded-full">
-            <img src="./navbar-icon.svg" />
-          </button>
+
+          <div className="flex flex-col items-end">
+            <button
+              className="flex p-3 md:hidden bg-white border border-gray-300 rounded-full z-[99999999] w-max"
+              onClick={() => {
+                setShowDropdown(!showDropdown);
+              }}
+            >
+              <img src="./navbar-icon.svg" />
+            </button>
+
+            {/* Dropdown */}
+            {showDropdown ? (
+              <div className="lg:hidden md:hidden flex flex-col justify-center">
+                <Button
+                  variant="ghost"
+                  className="font-body-normal-medium text-neutrals-80 z-50 w-full"
+                >
+                  Find Jobs
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="font-body-normal-medium text-neutrals-80 z-50 w-full"
+                >
+                  Browse Companies
+                </Button>
+                <Link to={"/login"}>
+                  <Button
+                    variant="ghost"
+                    className="font-button-normal text-brandsprimary w-full"
+                  >
+                    Login
+                  </Button>
+                </Link>
+                <Link to={"/signin"}>
+                  <Button className="bg-brandsprimary font-button-normal text-neutrals-0 w-full">
+                    Sign Up
+                  </Button>
+                </Link>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
 
         {/* Hero Content */}
@@ -110,9 +158,10 @@ export const HeaderSection = (): JSX.Element => {
           </div>
 
           {/* SearchIcon Card */}
-          <Card className="w-[720px] shadow-shadow bg-white z-50 pr-5">
+          <Card className="shadow-shadow bg-white z-50 pr-5 max-sm:p-5 max-sm:ml-16 ">
             <CardContent className="p-0">
-              <div className="flex flex-col md:flex-row items-center justify-center">
+              {/* <div className="flex flex-col md:flex-row items-center justify-center"> */}
+              <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-screen-md">
                 {/* Job Title Input */}
                 <div className="flex items-center gap-4 px-4 py-4 flex-1">
                   <SearchIcon className="w-6 h-6" />
@@ -120,7 +169,11 @@ export const HeaderSection = (): JSX.Element => {
                     {/* <div className="opacity-50 font-body-normal-regular text-neutrals-60">
                       Job title or keyword
                     </div> */}
-                    <input type='text' placeholder="Job title or keyword" className="opacity-50 font-body-normal-regular text-neutrals-60 h-12"></input>
+                    <input
+                      type="text"
+                      placeholder="Job title or keyword"
+                      className="opacity-50 font-body-normal-regular text-neutrals-60 h-12"
+                    ></input>
                     <Separator className="mt-0 bg-neutrals-20" />
                   </div>
                 </div>
@@ -133,7 +186,11 @@ export const HeaderSection = (): JSX.Element => {
                       {/* <div className="opacity-90 font-body-normal-regular text-neutrals-100">
                         Florence, Italy
                       </div> */}
-                      <input type='text' placeholder="Location" className="opacity-50 font-body-normal-regular text-neutrals-60 w-100 h-12"></input>
+                      <input
+                        type="text"
+                        placeholder="Location"
+                        className="opacity-50 font-body-normal-regular text-neutrals-60 w-100 h-12"
+                      ></input>
                       <ChevronDownIcon className="w-4 h-4" />
                     </div>
                     <Separator className="mt-0 bg-neutrals-20" />
@@ -141,7 +198,12 @@ export const HeaderSection = (): JSX.Element => {
                 </div>
 
                 {/* SearchIcon Button */}
-                <Button className="w-[209px] h-full py-3.5 px-[27px] bg-brandsprimary rounded-none font-button-large text-neutrals-0">
+                <Button
+                  className="w-[209px] h-full py-3.5 px-[27px] bg-brandsprimary rounded-none font-button-large text-neutrals-0"
+                  onClick={() => {
+                    console.log("hi");
+                  }}
+                >
                   Search my job
                 </Button>
               </div>
