@@ -21,14 +21,14 @@ const categoryData = [
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col gap-12 pt-[72px] pb-0 px-[124px] bg-neutrals-0">
-      <header className="flex items-end justify-between w-full">
+    <section className="flex flex-col gap-12 pt-[72px] pb-0 px-[16px] md:px-[124px] bg-neutrals-0">
+      <header className="flex items-end justify-center md:justify-between w-full">
         <h2 className="font-heading-h2 text-[length:var(--heading-h2-font-size)] tracking-[var(--heading-h2-letter-spacing)] leading-[var(--heading-h2-line-height)] [font-style:var(--heading-h2-font-style)] font-[number:var(--heading-h2-font-weight)]">
           <span className="text-[#25324b]">Explore by </span>
           <span className="text-[#26a3ff]">category</span>
         </h2>
 
-        <div className="group flex items-center gap-4 ">
+        <div className="hidden md:flex group items-center gap-4 ">
           <button className=" font-body-normal-semibold text-[length:var(--body-normal-semibold-font-size)] tracking-[var(--body-normal-semibold-letter-spacing)] leading-[var(--body-normal-semibold-line-height)] [font-style:var(--body-normal-semibold-font-style)] font-[number:var(--body-normal-semibold-font-weight)] text-brandsprimary transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-z-3">
             Show all jobs
           </button>
@@ -38,7 +38,7 @@ export const HeroSection = (): JSX.Element => {
 
       <div className="flex flex-col gap-8">
         {/* First row of categories */}
-        <div className="flex gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           {categoryData.slice(0, 4).map((category, index) => (
             <Card
             key={index}
@@ -74,7 +74,7 @@ export const HeroSection = (): JSX.Element => {
         </div>
 
         {/* Second row of categories */}
-        <div className="flex gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           {categoryData.slice(4, 8).map((category, index) => (
             <Card
               key={index}

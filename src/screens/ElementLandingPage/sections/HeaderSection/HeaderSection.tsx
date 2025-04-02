@@ -10,7 +10,7 @@ export const HeaderSection = (): JSX.Element => {
     <section className="relative w-full bg-lightsgray overflow-hidden">
       <div className="relative">
         <img
-          className="absolute w-[997px] h-[794px] top-0 right-0"
+          className="absolute  h-[794px] top-0 right-0"
           alt="Pattern"
           src="/pattern.svg"
         />
@@ -18,7 +18,7 @@ export const HeaderSection = (): JSX.Element => {
         <div className="absolute right-0 top-[87px]">
           <div className="relative">
             <img
-              className="w-[501px] h-[707px] object-cover"
+              className="w-[501px] h-[707px] object-cover hidden md:block"
               alt="Design"
               src="/design-b3dcb2a2-23f6-41f0-b740-595184e6d3e9-1.png"
             />
@@ -32,7 +32,7 @@ export const HeaderSection = (): JSX.Element => {
         </div>
 
         {/* Navigation Bar */}
-        <div className="flex items-center justify-between px-[124px] py-6">
+        <div className="flex items-center justify-between px-12 md:px-[124px] py-6">
           <div className="flex items-center gap-12">
             <div className="relative w-40 h-9">
               <div className="absolute w-8 h-8 top-0.5 left-0 bg-brandsprimary rounded-2xl overflow-hidden">
@@ -54,12 +54,12 @@ export const HeaderSection = (): JSX.Element => {
 
             <div className="flex items-end gap-4">
               <div className="py-6">
-                <Button  variant='ghost' className="font-body-normal-medium text-neutrals-80">
+                <Button  variant='ghost' className="block font-body-normal-medium text-neutrals-80">
                   Find Jobs
                 </Button>
               </div>
               <div className="py-6">
-                <Button variant="ghost" className="font-body-normal-medium text-neutrals-80">
+                <Button variant="ghost" className="block font-body-normal-medium text-neutrals-80">
                   Browse Companies
                 </Button>
                 
@@ -84,18 +84,21 @@ export const HeaderSection = (): JSX.Element => {
             </Button>
             </Link>
           </div>
+          <button className="flex md:hidden p-3 bg-white border border-gray-300 rounded-full">
+            <img src="./navbar-icon.svg" />
+          </button>
         </div>
 
         {/* Hero Content */}
-        <div className="flex flex-col w-[629px] items-start gap-[23px] ml-[125px] mt-16">
-          <div className="relative w-[535px]">
-            <div className="[font-family:'Clash_Display-Regular',Helvetica] font-normal text-7xl leading-[79.2px]">
+        <div className="flex flex-col w-[629px] items-start gap-[23px] m-[16px] md:ml-[125px] mt-16">
+          <div className="relative">
+            <div className="[font-family:'Clash_Display-Regular',Helvetica] font-normal text-6xl md:text-7xl leading-[79.2px]">
               <span className="text-[#25324b]">Discover more than </span>
               <span className="text-[#26a3ff]">5000+ Jobs</span>
             </div>
 
             <img
-              className="mt-[30px] w-[455px] h-10"
+              className="mt-[30px] w-[455px] h-10 "
               alt="Group"
               src="/group.png"
             />
@@ -109,7 +112,7 @@ export const HeaderSection = (): JSX.Element => {
           {/* SearchIcon Card */}
           <Card className="w-[720px] shadow-shadow bg-white z-50 pr-5">
             <CardContent className="p-0">
-              <div className="flex items-center justify-center">
+              <div className="flex flex-col md:flex-row items-center justify-center">
                 {/* Job Title Input */}
                 <div className="flex items-center gap-4 px-4 py-4 flex-1">
                   <SearchIcon className="w-6 h-6" />
@@ -123,7 +126,7 @@ export const HeaderSection = (): JSX.Element => {
                 </div>
 
                 {/* Location Input */}
-                <div className="flex items-center gap-4 pl-2 pr-6 py-4 flex-1">
+                <div className="flex items-center gap-4 pl-2 md:pr-6 py-4 flex-1">
                   <MapPinIcon className="w-6 h-6" />
                   <div className="flex flex-col w-full">
                     <div className="flex items-center justify-between w-full">
