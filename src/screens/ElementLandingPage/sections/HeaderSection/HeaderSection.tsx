@@ -34,8 +34,8 @@ export const HeaderSection = (): JSX.Element => {
         </div>
 
         {/* Navigation Bar */}
-        <div className="flex items-center justify-between px-12 md:px-[124px] py-6 max-sm:items-start">
-          <div className="flex items-center gap-12">
+        <div className="flex items-center justify-between w-full gap-0 px-12 md:px-[124px] py-6 max-sm:items-start">
+          <div className="flex items-center gap-12 flex-1">
             {/* Logo */}
             <div className="relative w-40 h-9">
               <div className="absolute w-8 h-8 top-0.5 left-0 bg-brandsprimary rounded-2xl overflow-hidden">

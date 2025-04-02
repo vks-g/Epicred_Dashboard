@@ -89,7 +89,7 @@ export const FeaturedJobsSection = (): JSX.Element => {
         />
 
         <div className="flex flex-col items-start gap-12 z-50">
-          <div className="flex w-full items-end justify-between">
+          <div className="flex w-full items-end justify-around">
             <h2 className="font-heading-h2 text-[length:var(--heading-h2-font-size)] tracking-[var(--heading-h2-letter-spacing)] leading-[var(--heading-h2-line-height)] [font-style:var(--heading-h2-font-style)]">
               <span className="text-[#25324b]">Latest </span>
               <span className="text-[#26a3ff]">jobs open</span>
@@ -99,7 +99,7 @@ export const FeaturedJobsSection = (): JSX.Element => {
               variant="ghost"
               className="flex items-center gap-2 text-brandsprimary"
             >
-              <span className="font-body-normal-semibold text-[length:var(--body-normal-semibold-font-size)] tracking-[var(--body-normal-semibold-letter-spacing)] leading-[var(--body-normal-semibold-line-height)] [font-style:var(--body-normal-semibold-font-style)]">
+              <span className="font-body-normal-semibold text-[length:var(--body-normal-semibold-font-size)] tracking-[var(--body-normal-semibold-letter-spacing)] leading-[var(--body-normal-semibold-line-height)] [font-style:var(--body-normal-semibold-font-style)] z-50">
                 Show all jobs
               </span>
               <ArrowRightIcon className="h-6 w-6" />

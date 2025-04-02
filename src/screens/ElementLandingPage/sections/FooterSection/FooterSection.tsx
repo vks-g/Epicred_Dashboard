@@ -145,7 +145,7 @@ export const FooterSection = (): JSX.Element => {
               <a
                 key={index}
                 href="#"
-                className="w-8 h-8 rounded-2xl bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition-all"
+                className="w-8 h-8 rounded-2xl bg-white bg-opacity-10  flex items-center justify-center hover:bg-opacity-20 transition-all"
                 aria-label={social.name}
               >
                 {social.icon}
